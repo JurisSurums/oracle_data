@@ -1,100 +1,121 @@
-//every student (994000) has 10 courses
-//every professor (3000) has 2 courses
-
+//NEED FIX:
 // karoč 50 pa katram kursam
-
-// 24850 students for each faculty
 // 100 professors for each faculty
+// and db
 
 const fs = require("fs");
+math = require("mathjs");
 stream = fs.createWriteStream("Faculty.txt")
 
+var course_prof = Array.from(Array(50), () => new Array(2)) // 50 courses with 2 professors 
+
+var sum = 1;
+
+for(var o=0; o<50; o++){
+    for(var t=0; t<2; t++)
+    {
+        course_prof[o][t] = sum;
+        sum++;
+    }
+}
+
+function returnFiveCourses(min){
+        var arr = [];
+        while(arr.length < 5){
+        var r = Math.floor(Math.random() * 50) + min;
+        if(arr.indexOf(r) === -1) arr.push(r);
+    }
+    return arr;
+}
+function randomOf(){
+        var one = math.random();
+        if(one<0.5){
+            return 0;
+        }
+        return 1;
+}
+
 var id = 1;
-var prof_id = 1;
-var student_id = 24850;
 
-for(var i=1; i<51; i++){ // LAW courses
-    for(var k=0; k<34; k++) //CHECK DIS NUMBER also students for each professor un profesori ir 2x vairāk pa kursiem
+for(var i=1; i<24850; i++){
+    var five_courses = returnFiveCourses(1);
+    for(var j=0; j<5; j++)
     {
-        stream.write(id);
-        stream.write(student_id);
-        stream.write(prof_id);
-        stream.write(i);
-        stream.write("Law studies")
+        //stream.write(id); //just id
+        //stream.write(i); // student id
+        //stream.write(five_courses[j]) //course_id
+        //stream.write(course_prof_law[five_courses[j]][randomOf()])
+
+        stream.write(id); //just id
+        stream.write(i); // student id
+        stream.write(five_courses[j]) //course_id
+        stream.write(course_prof[five_courses[j]][randomOf()]) //prof_id
         id++;
-        prof_id++;
-        stream.write(id);
-        stream.write(student_id);
-        stream.write(prof_id);
-        stream.write(i);
-        stream.write("Law studies")
-        prof_id--;
-        id++;
-        student_id++;
     }
-    prof_id+=2;
 }
 
-for(var i=1; i<51; i++){ // med courses
-    for(var k=0; k<34; k++) //CHECK DIS NUMBER also students for each professor un profesori ir 2x vairāk pa kursiem
+
+sum = 101;
+for(var o=0; o<50; o++){
+    for(var t=0; t<2; t++)
     {
-        stream.write(id);
-        stream.write(student_id);
-        stream.write(prof_id);
-        stream.write(i);
-        stream.write("Medical studies")
-        id++;
-        prof_id++;
-        stream.write(id);
-        stream.write(student_id);
-        stream.write(prof_id);
-        stream.write(i);
-        stream.write("Medical studies")
-        prof_id--;
-        id++;
-        student_id++;
+        course_prof[o][t] = sum;
+        sum++;
     }
-    prof_id+=2;
 }
-for(var i=1; i<51; i++){ // history courses
-    for(var k=0; k<34; k++) //CHECK DIS NUMBER also students for each professor un profesori ir 2x vairāk pa kursiem
+
+for(var i=24850; i<49700; i++){
+    var five_courses = returnFiveCourses(50);
+    for(var j=0; j<5; j++)
     {
-        stream.write(id);
-        stream.write(student_id);
-        stream.write(prof_id);
-        stream.write(i);
-        stream.write("Law studies")
+        stream.write(id); //just id
+        stream.write(i); // student id
+        stream.write(five_courses[j]) //course_id
+        stream.write(course_prof[five_courses[j]][randomOf()]) //prof_id
         id++;
-        prof_id++;
-        stream.write(id);
-        stream.write(student_id);
-        stream.write(prof_id);
-        stream.write(i);
-        stream.write("Law studies")
-        prof_id--;
-        id++;
-        student_id++;
     }
-    prof_id+=2;
 }
-for(var i=1; i<51; i++){ // LAW courses
-    for(var k=0; k<34; k++) //CHECK DIS NUMBER also students for each professor un profesori ir 2x vairāk pa kursiem
+
+
+sum = 201;
+for(var o=0; o<50; o++){
+    for(var t=0; t<2; t++)
     {
-        stream.write(id);
-        stream.write(student_id);
-        stream.write(prof_id);
-        stream.write(i);
-        stream.write("Law studies")
-        id++;
-        prof_id++;
-        stream.write(id);
-        stream.write(student_id);
-        stream.write(prof_id);
-        stream.write(i);
-        stream.write("Law studies")
-        prof_id--;
-        id++;
-        student_id++;
+        course_prof[o][t] = sum;
+        sum++;
     }
-    prof_id+=2;
+}
+
+for(var i=49700; i<74550; i++){
+    var five_courses = returnFiveCourses(100);
+    for(var j=0; j<5; j++)
+    {
+        stream.write(id); //just id
+        stream.write(i); // student id
+        stream.write(five_courses[j]) //course_id
+        stream.write(course_prof[five_courses[j]][randomOf()]) //prof_id
+        id++;
+    }
+}
+
+
+sum = 301;
+for(var o=0; o<50; o++){
+    for(var t=0; t<2; t++)
+    {
+        course_prof[o][t] = sum;
+        sum++;
+    }
+}
+
+for(var i=74550; i<99400; i++){
+    var five_courses = returnFiveCourses(150);
+    for(var j=0; j<5; j++)
+    {
+        stream.write(id); //just id
+        stream.write(i); // student id
+        stream.write(five_courses[j]) //course_id
+        stream.write(course_prof[five_courses[j]][randomOf()]) //prof_id
+        id++;
+    }
 }
