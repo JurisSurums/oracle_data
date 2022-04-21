@@ -41,15 +41,15 @@ for(var i=1; i<24850; i++){
     var five_courses = returnFiveCourses(1);
     for(var j=0; j<5; j++)
     {
-        //stream.write(id); //just id
-        //stream.write(i); // student id
-        //stream.write(five_courses[j]) //course_id
-        //stream.write(course_prof_law[five_courses[j]][randomOf()])
-
-        stream.write(id); //just id
-        stream.write(i); // student id
-        stream.write(five_courses[j]) //course_id
-        stream.write(course_prof[five_courses[j]][randomOf()]) //prof_id
+        stream.write('INSERT INTO Persons ( person_ID \r\n , adress_ID \r\n , first_name \r\n) \r\n\r\n');
+        stream.write('VALUES\r\n');
+      
+        stream.write('(\r\n');
+        stream.write('    , ' + id + '\r\n'); //just id
+        stream.write('    , ' + i + '\r\n'); // student id
+        stream.write('    , ' + five_courses[j] + '\r\n') //course_id
+        stream.write('    , ' + course_prof[five_courses[j]][randomOf()] + '\r\n') //prof_id
+        stream.write(');\r\n\r\n');
         id++;
     }
 }
@@ -68,10 +68,15 @@ for(var i=24850; i<49700; i++){
     var five_courses = returnFiveCourses(50);
     for(var j=0; j<5; j++)
     {
-        stream.write(id); //just id
-        stream.write(i); // student id
-        stream.write(five_courses[j]) //course_id
-        stream.write(course_prof[five_courses[j]][randomOf()]) //prof_id
+        stream.write('INSERT INTO Persons ( person_ID \r\n , adress_ID \r\n , first_name \r\n) \r\n\r\n');
+        stream.write('VALUES\r\n');
+      
+        stream.write('(\r\n');
+        stream.write('    , ' + id + '\r\n'); //just id
+        stream.write('    , ' + i + '\r\n'); // student id
+        stream.write('    , ' + five_courses[j] + '\r\n') //course_id
+        stream.write('    , ' + course_prof[five_courses[j]][randomOf()] + '\r\n') //prof_id
+        stream.write(');\r\n\r\n');
         id++;
     }
 }
@@ -90,10 +95,15 @@ for(var i=49700; i<74550; i++){
     var five_courses = returnFiveCourses(100);
     for(var j=0; j<5; j++)
     {
-        stream.write(id); //just id
-        stream.write(i); // student id
-        stream.write(five_courses[j]) //course_id
-        stream.write(course_prof[five_courses[j]][randomOf()]) //prof_id
+        stream.write('INSERT INTO Persons ( person_ID \r\n , adress_ID \r\n , first_name \r\n) \r\n\r\n');
+        stream.write('VALUES\r\n');
+      
+        stream.write('(\r\n');
+        stream.write('    , ' + id + '\r\n'); //just id
+        stream.write('    , ' + i + '\r\n'); // student id
+        stream.write('    , ' + five_courses[j] + '\r\n') //course_id
+        stream.write('    , ' + course_prof[five_courses[j]][randomOf()] + '\r\n') //prof_id
+        stream.write(');\r\n\r\n');
         id++;
     }
 }
@@ -112,10 +122,15 @@ for(var i=74550; i<99400; i++){
     var five_courses = returnFiveCourses(150);
     for(var j=0; j<5; j++)
     {
-        stream.write(id); //just id
-        stream.write(i); // student id
-        stream.write(five_courses[j]) //course_id
-        stream.write(course_prof[five_courses[j]][randomOf()]) //prof_id
+        stream.write('INSERT INTO Persons ( person_ID \r\n , adress_ID \r\n , first_name \r\n) \r\n\r\n');
+        stream.write('VALUES\r\n');
+      
+        stream.write('(\r\n');
+        stream.write('    , ' + id + '\r\n'); //just id
+        stream.write('    , ' + i + '\r\n'); // student id
+        stream.write('    , ' + five_courses[j]+ '\r\n') //course_id
+        stream.write('    , ' + course_prof[five_courses[j]][randomOf()] + '\r\n') //prof_id
+        stream.write(');\r\n\r\n');
         id++;
     }
 }
